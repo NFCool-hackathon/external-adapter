@@ -15,4 +15,12 @@ app.post('/', (req, res) => {
   })
 })
 
+// app.post('/check', (req, res) => {
+//   console.log('POST Data: ', req.body)
+//   createCheckRequest(req.body, (status, result) => {
+//     console.log('Result: ', result)
+//     res.status(status).json(result)
+//   })
+// })
+
 app.listen(port, () => console.log(`Listening on port ${port}!`))
