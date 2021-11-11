@@ -50,7 +50,7 @@ const createRequest = (input, callback) => {
       // result key. This allows different adapters to be compatible with
       // one another.
       console.log(response)
-      response.data.result = Requester.validateResultNumber(response.data, [])
+      // response.data.result = Requester.validateResultNumber(response.data, [])
       callback(response.status, Requester.success(jobRunID, response))
     })
     .catch(error => {
