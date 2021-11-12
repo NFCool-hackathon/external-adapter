@@ -14,22 +14,25 @@ const customError = (data) => {
 const customParams = {
   tokenId: '',
   unitId: '',
-  pin: ''
+  pin: '',
+  to: ''
 }
 
 const createRequest = (input, callback) => {
   // The Validator helps you validate the Chainlink request data
   const validator = new Validator(callback, input, customParams)
   const jobRunID = validator.validated.id
-  const url = 'https://us-central1-nfcool.cloudfunctions.net/sendPhoneVerification\n'
+  const url = 'https://us-central1-nfcool.cloudfunctions.net/checkPhoneVerification'
   const tokenId = validator.validated.data.tokenId
   const unitId = validator.validated.data.unitId
   const pin = validator.validated.data.pin
+  const to = validator.validated.data.to
 
   const params = {
     tokenId,
     unitId,
-    pin
+    pin,
+    to
   }
 
   // This is where you would add method and headers
