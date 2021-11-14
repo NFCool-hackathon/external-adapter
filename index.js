@@ -1,4 +1,5 @@
 const { Requester, Validator } = require('@chainlink/external-adapter')
+const { cloudFunction } = require('.env')
 
 // Define custom error scenarios for the API.
 // Return true for the adapter to retry.
@@ -22,7 +23,7 @@ const createRequest = (input, callback) => {
   // The Validator helps you validate the Chainlink request data
   const validator = new Validator(callback, input, customParams)
   const jobRunID = validator.validated.id
-  const url = 'https://us-central1-nfcool.cloudfunctions.net/checkPhoneVerification'
+  const url = cloudFunction
   const tokenId = validator.validated.data.tokenId
   const unitId = validator.validated.data.unitId
   const pin = validator.validated.data.pin
