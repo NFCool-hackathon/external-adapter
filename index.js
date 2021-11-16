@@ -1,5 +1,5 @@
 const { Requester, Validator } = require('@chainlink/external-adapter')
-const { cloudFunction } = require('.env')
+const { cloudFunction } = require('./keys.env')
 
 // Define custom error scenarios for the API.
 // Return true for the adapter to retry.
@@ -15,8 +15,7 @@ const customError = (data) => {
 const customParams = {
   tokenId: '',
   unitId: '',
-  pin: '',
-  to: ''
+  pin: ''
 }
 
 const createRequest = (input, callback) => {
@@ -27,13 +26,11 @@ const createRequest = (input, callback) => {
   const tokenId = validator.validated.data.tokenId
   const unitId = validator.validated.data.unitId
   const pin = validator.validated.data.pin
-  const to = validator.validated.data.to
 
   const params = {
     tokenId,
     unitId,
-    pin,
-    to
+    pin
   }
 
   // This is where you would add method and headers
