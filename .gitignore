@@ -1,3 +1,4 @@
 node_modules/
 package-lock.json
-*.zip
+*.zip!/keys.env.js
+/keys.env.js
