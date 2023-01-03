@@ -1,5 +1,7 @@
 # Chainlink Phone Verification External Adapter
 
+Chainlink external adapter repository for the Chainlink hackathon submission NFCool: https://devpost.com/software/nfc-for-real-goods 
+
 ## JOB Code
 
 Look [here](job.toml)
